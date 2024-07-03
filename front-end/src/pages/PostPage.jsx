@@ -2,6 +2,7 @@ import { Avatar, Box, Divider, Flex, Image, Text } from "@chakra-ui/react"
 import { BsThreeDots } from "react-icons/bs"
 import PostActions from "../components/PostActions"
 import { useState } from "react";
+import Comment from "../components/Comment";
 
 const PostPage = () => {
 
@@ -53,6 +54,10 @@ const PostPage = () => {
 
             </Flex>
             <Divider borderColor={'black.neutral'} my={5}/>
+
+            <Comment/>
+            <Comment/>
+            <Comment/>
 
 
         </>
