@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom'
 const styles = {
   global: {
     body: {
-      color: '#000000',
+      color: '#17181d',
       bg: '#ffffff'
     }
   }
@@ -17,11 +17,15 @@ const styles = {
 
 const colors = {
   black:{
-    neutral:'#000000'
+    neutral:'#17181d'
   },
 
   theme:{
     neutral:'#ff4500'
+  },
+
+  buttons:{
+    neutral:'rgb(229, 235, 238)'
   }
 }
 

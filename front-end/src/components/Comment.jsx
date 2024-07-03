@@ -15,7 +15,7 @@ const Comment = (props) => {
                         <Flex w={'full'} justifyContent={'space-between'} alignItems={'center'}>
                             <Text fontSize={'sm'} fontWeight={'bold'}>{props.name}</Text>
                             <Flex gap={2} alignItems={'center'}>
-                                <Text fontSize={'sm'} color={'black.neutral'}>ID</Text>
+                                <Text fontSize={'sm'} color={'black.neutral'}>{props.createdAt}</Text>
                                 <BsThreeDots/>
                             </Flex>
                             </Flex>

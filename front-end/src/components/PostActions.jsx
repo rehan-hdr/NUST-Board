@@ -5,14 +5,14 @@ import { Flex } from "@chakra-ui/react";
 const PostActions = ({liked, setLiked}) => {
 
     return(
-        <Flex gap={3} my={2} onClick={(e) => e.preventDefault()}>
+        <Flex gap={3} my={1} onClick={(e) => e.preventDefault()}>
             <BiLike
-                color={liked ? '#ff4500' : ''}
+                size={30}
                 fill={liked ? '#ff4500' : ''}
                 onClick = {() => setLiked(!liked)}
                 >
             </BiLike>
-            <BiComment></BiComment>
+            <BiComment size={30}></BiComment>
         </Flex>
     )
 

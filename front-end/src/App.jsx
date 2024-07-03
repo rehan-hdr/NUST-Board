@@ -9,13 +9,16 @@ import PostPage from './pages/PostPage';
 function App() {
 
   return (
-    <Container maxW={"620px"}>
+    <>
+    <Container maxW={'230px'} bg={'black'}></Container>
+    <Container maxW={"680px"}>
       <Header />
       <Routes>
         <Route path='/:username' element={<UserPage />}/>
         <Route path='/:username/post/:pid' element={<PostPage />}/>
       </Routes>
     </Container>
+    </>
 
   )
 };

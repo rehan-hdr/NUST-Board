@@ -8,10 +8,10 @@ const UserHeader = () => {
                     <Text fontSize={"2xl"} fontWeight={'bold'}>
                         Full Name
                     </Text>
-                    <Flex gap={2} flexDirection={'column'} alignItems={'start'}>
+                    {/* <Flex gap={2} flexDirection={'column'} alignItems={'start'}>
                         <Text fontSize={'l'}>Junior</Text>
                         <Text fontSize={'l'}>SEECS</Text>
-                    </Flex>
+                    </Flex> */}
                     
                 </Box>
                 <Box>
@@ -23,9 +23,9 @@ const UserHeader = () => {
                 </Box>
             </Flex>
 
-            <Text>Description you want for yourself. lorem40</Text>
+            <Text>lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, mollitia distinctio? In quam mollitia id quo, velit molestiae provident alias est corrupti voluptas nulla odio! Nihil eius iusto, quam fugiat, odit obcaecati consequuntur quod fugit non, earum totam natus. Voluptatum!</Text>
 
-            <Flex w={'full'} justifyContent={'space-between'}>
+            {/* <Flex w={'full'} justifyContent={'space-between'}>
                 <Flex gap={2} alignItems={'center'}>
 
                     <Box w='1' h='1' borderRadius={'full'}></Box>
@@ -33,9 +33,9 @@ const UserHeader = () => {
                     <Link>your links</Link>
 
                 </Flex>
-            </Flex>
+            </Flex> */}
 
-            <Flex w={'full'} fontWeight={'bold'} justifyContent={'center'} border={'1px solid black'} borderRadius={'full'} bg = {'black.neutral'} color={'#ffffff'} borderBottom={'5px solid gray'}>
+            <Flex w={'full'} fontWeight={'bold'} justifyContent={'center'} borderRadius={'full'} bg = {'theme.neutral'} color={'#ffffff'}>
                 POSTS
                 </Flex>
         </VStack>

@@ -24,6 +24,7 @@ const UserPost = (props) => {
                             <Text fontSize={'sm'} fontWeight={'bold'}>REHAN HAIDER</Text>
                         </Flex>
                         <Flex gap={4} alignItems={'enter'}>
+                            <Text fontSize={'md'} color={'black.neutral'}>Jobs/Internships</Text>
                             <Text fontSize={'sm'} color={'black.neutral'}> 1d</Text>
                             <BsThreeDots/>
 
@@ -42,13 +43,7 @@ const UserPost = (props) => {
 
 
 
-                    {/* Going to use this in the Post Page* /}
-                    {/* <Text fontWeight={'bold'}>sDescription</Text>
-                    <Text fontSize={'sm'}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe consequatur nemo corrupti! Voluptatem officia distinctio praesentium delectus nemo eligendi ipsam deleniti architecto officiis debitis. Eum ipsum sed eveniet, doloremque quis optio obcaecati at quaerat veritatis illo ducimus inventore, vel quae magnam molestias saepe rerum repellat aliquam perferendis eligendi labore neque voluptatem laboriosam? Consequatur, adipisci. Delectus fuga totam eos asperiores officia.
-                    </Text> */}
-
-                    <Flex gap={3} mt={1}>
+                    <Flex gap={3} mt={0}>
                         <PostActions liked={liked} setLiked={setLiked}/>
                     </Flex>
                     <Flex gap={1} alignItems={'center'}>

@@ -19,6 +19,8 @@ const PostPage = () => {
                 </Flex>
                 <Flex gap={4} alignItems={'center'}>
 
+                <Text fontSize={'md'} color={'black.neutral'}>Jobs/Internships</Text>
+
                     <Text fontSize={'sm'}>
                         1d
                     </Text>
