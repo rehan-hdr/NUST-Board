@@ -1,4 +1,4 @@
-import { Flex, Link, Avatar, Text, Box, Image } from "@chakra-ui/react"
+import { Flex, Link, Avatar, Text, Box, Image, Divider } from "@chakra-ui/react"
 import { BsThreeDots } from "react-icons/bs"
 import PostActions from "./PostActions"
 import { Link as ReactRouterLink} from "react-router-dom"
@@ -58,7 +58,10 @@ const UserPost = (props) => {
                     </Flex>
                 </Flex>
             </Flex>
+            <Divider borderColor={'black.neutral'} my={0}/>
         </Link>
+                    
+
     )
 }
 

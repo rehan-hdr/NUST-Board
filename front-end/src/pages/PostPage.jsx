@@ -55,9 +55,28 @@ const PostPage = () => {
             </Flex>
             <Divider borderColor={'black.neutral'} my={5}/>
 
-            <Comment/>
-            <Comment/>
-            <Comment/>
+            <Comment 
+                comment='BRUHHH'
+                createdAt='2d'
+                likes={100}
+                name='Raza Haider'
+                userAvatar='/RehanHaider.JPG'
+
+            />
+            <Comment
+                comment='BRUHHH'
+                createdAt='2d'
+                likes={102}
+                name='RSaa Haider'
+                userAvatar='/logo.png'
+            />
+            <Comment
+                  comment='NAH BOIH'
+                  createdAt='1d'
+                  likes={100}
+                  name='Raza Haider'
+                  userAvatar='/RehanHaider.JPG'
+            />
 
 
         </>
