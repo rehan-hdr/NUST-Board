@@ -1,11 +1,13 @@
 
 
-const signupUser = (req, res) => {
+const signupUser = async (req, res) => {
     try {
-       console.log('')
+        res.send('Hello')
     } catch (error) {
         res.status(404)
     }
+
 }
+
 
 export {signupUser}
