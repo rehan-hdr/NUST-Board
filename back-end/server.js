@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/dbConnection.js';
 import cookieParser from 'cookie-parser';
 import userRoutes from './routes/userRoutes.js';
+import postRoutes from './routes/postRoutes.js'
 import errorHandler from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(errorHandler);
 
 
 app.use('/api/users', userRoutes);
+app.use('/api/posts', postRoutes);
 
 app.listen(port, () => {
         console.log(`Server started at http://localhost:${port}`)
