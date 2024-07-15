@@ -13,7 +13,7 @@ const signupUser = async (req, res) => {
         const user = await User.findOne({$or:[{email}, {username}]});
         
         if (user) {
-            return res.status(400).json({message:'User already exists'});
+            return res.status(400).json({error:'User already exists'});
         }
 
         const salt = await bcrypt.genSalt(10);
@@ -38,11 +38,11 @@ const signupUser = async (req, res) => {
         }
         else{
 
-            res.status(400).json({message:'Invalid user data'})
+            res.status(400).json({error:'Invalid user data'})
         }
 
     } catch (err) {
-        res.status(500).json({message:err.message});
+        res.status(500).json({error:err.message});
         console.log('Error in signupUser: ', err.message);
     }
 }
@@ -60,14 +60,14 @@ const loginUser = async (req, res) => {
 
         if (!user){
             return res.status(400).json({
-                message:'username is not registered'
+                error:'username is not registered'
             })
         }
         const isPasswordCorrect = await bcrypt.compare(password, user.password);
 
         if(!isPasswordCorrect){
             return res.status(400).json({
-                message: 'Password is wrong'
+                error: 'Password is wrong'
             })
         }
 
@@ -81,7 +81,7 @@ const loginUser = async (req, res) => {
 
 
     } catch (err) {
-        res.status(500).json({message:err.message});
+        res.status(500).json({error:err.message});
         console.log('Error in loginUser: ', err.message);
     }
 }
@@ -101,7 +101,7 @@ const logoutUser = (req, res) => {
         });
 
     } catch (err) {
-        res.status(500).json({message:err.message});
+        res.status(500).json({error:err.message});
         console.log('Error in logoutUser: ', err.message);
     }
 }
@@ -119,12 +119,12 @@ const updateUser = async (req, res) => {
 
         if (!user){
             return res.status(400).json({
-                message:'User not found'
+                error:'User not found'
             })
         }
 
         if (req.params.id !== userId.toString()){
-            return res.status(400).json({message:'You can not update someone else\'s user profile'});
+            return res.status(400).json({error:'You can not update someone else\'s user profile'});
         }
 
         if (password){
@@ -148,7 +148,7 @@ const updateUser = async (req, res) => {
 
 
     } catch (err) {
-        res.status(500).json({message:err.message});
+        res.status(500).json({error:err.message});
         console.log('Error in updateUser: ', err.message);
     }
 }
@@ -161,7 +161,7 @@ const getUserProfile = async (req, res) => {
     const {username} = req.params;
     try {
         const user = await User.findOne({username}).select('-password').select('-email').select('-updatedAt');
-        if(!user) return res.status(404).json({message:'User does not exist'});
+        if(!user) return res.status(404).json({error:'User does not exist'});
 
         res.status(201).json(user)
 
@@ -170,7 +170,7 @@ const getUserProfile = async (req, res) => {
 
 
     } catch (err) {
-        res.status(500).json({message:err.message});
+        res.status(500).json({error:err.message});
         console.log('Error in updateUser: ', err.message);
     }
 }
