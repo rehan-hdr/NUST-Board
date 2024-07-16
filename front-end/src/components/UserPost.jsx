@@ -14,18 +14,18 @@ const UserPost = (props) => {
             <Flex gap={3} mb={4} py={5}>
 
                 <Flex flexDirection={'column'} alignItems={'center'}>
-                    <Avatar size='md' name='Rehan Haider' src='/RehanHaider.JPG' />
+                    <Avatar size='md' name='Rehan Haider' src='/onust.jpeg' />
                 </Flex>
 
                 <Flex flex={1} flexDirection={'column'} gap={2}>
 
                     <Flex justifyContent={'space-between'} w={'full'}>
                         <Flex w = {'full'} alignItems={'center'}>
-                            <Text fontSize={'sm'} fontWeight={'bold'}>REHAN HAIDER</Text>
+                            <Text fontSize={'sm'} fontWeight={'bold'}>Orientation of NUST</Text>
                         </Flex>
                         <Flex gap={4} alignItems={'enter'}>
-                            <Text fontSize={'md'} color={'black.neutral'}>Jobs/Internships</Text>
-                            <Text fontSize={'sm'} color={'black.neutral'}> 1d</Text>
+                            <Text fontSize={'md'} color={'black.neutral'}>CampusEvents</Text>
+                            <Text fontSize={'sm'} color={'black.neutral'}> 3h</Text>
                             <BsThreeDots/>
 
                         

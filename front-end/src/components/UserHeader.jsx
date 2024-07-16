@@ -6,7 +6,7 @@ const UserHeader = () => {
             <Flex justifyContent={"space-between"} w={'full'}>
                 <Box>
                     <Text fontSize={"2xl"} fontWeight={'bold'}>
-                        Full Name
+                        Rehan Haider
                     </Text>
                     {/* <Flex gap={2} flexDirection={'column'} alignItems={'start'}>
                         <Text fontSize={'l'}>Junior</Text>
@@ -23,7 +23,7 @@ const UserHeader = () => {
                 </Box>
             </Flex>
 
-            <Text>lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, mollitia distinctio? In quam mollitia id quo, velit molestiae provident alias est corrupti voluptas nulla odio! Nihil eius iusto, quam fugiat, odit obcaecati consequuntur quod fugit non, earum totam natus. Voluptatum!</Text>
+            <Text>SEECS<br></br>SOPHOMORE</Text>
 
             {/* <Flex w={'full'} justifyContent={'space-between'}>
                 <Flex gap={2} alignItems={'center'}>

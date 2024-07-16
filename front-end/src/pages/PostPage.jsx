@@ -19,7 +19,7 @@ const PostPage = () => {
                 </Flex>
                 <Flex gap={4} alignItems={'center'}>
 
-                <Text fontSize={'md'} color={'black.neutral'}>Jobs/Internships</Text>
+                <Text fontSize={'md'} color={'black.neutral'}>CampusEvents</Text>
 
                     <Text fontSize={'sm'}>
                         1d
@@ -31,16 +31,22 @@ const PostPage = () => {
 
 
 
-            <Text my={3} fontSize={'lg'}>Lets go bhruh</Text>
+            <Text my={3} fontSize={'lg'}>Executive Recruitment Deadline Extended!!! Apply Now!</Text>
 
             <Text my={3} fontSize={'md'}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro explicabo harum ipsam minima quas illo delectus quo, voluptatem aspernatur error impedit eum obcaecati vel recusandae odio dolore eos? Ipsum repellat nobis nemo ipsam animi facere veniam suscipit quisquam nam obcaecati dolores distinctio odio ullam, unde quis, iusto nihil officiis beatae.
+                            Breaking news, future execs!<br></br>
+                The hunt for the best of the best for ON'24 isn't over yet.<br></br> 
+                <b>Deadline extended to July 6th, 2024, 11:59 PM.</b><br></br>
+                Ready to step up and shine?<br></br>
+
+                Tu Phir Shuru Karein?<br></br>
+                #ON24
             </Text>
 
 
 
             <Box borderRadius={6} overflow={'hidden'} border={'1px solid'} borderColor={'gray'}>
-                <Image src='/RehanHaider.JPG' w={'full'}/>
+                <Image src='/onust.jpeg' w={'full'}/>
             </Box>
 
             <Flex gap={2} alignItems={'center'}>

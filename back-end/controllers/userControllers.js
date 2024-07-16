@@ -1,7 +1,7 @@
 import User from "../models/userModel.js";
 import bcrypt from 'bcryptjs';
 import generateTokenAndSetCookie from '../utils/generateTokenAndSetCookie.js'
-
+import{v2 as cloudinary} from 'cloudinary'
 
 // @desc register a user
 // @route POST /api/users/signup
@@ -34,7 +34,11 @@ const signupUser = async (req, res) => {
             res.status(201).json({
                 message:'User created',
                 _id:newUser._id,
-                name: newUser.name})
+                name: newUser.name,
+                email: newUser.email,
+                username: newUser.username,
+                bio:newUser.bio,
+                profilePic: newUser.profilePic})
         }
         else{
 
@@ -75,8 +79,12 @@ const loginUser = async (req, res) => {
 
         res.status(200).json({
             message:'Login Successful',
-            _id: user._id,
-            name:user.name,
+            _id:user._id,
+            name: user.name,
+            email: user.email,
+            username: user.username,
+            bio: user.bio,
+            profilePic: user.profilePic
         })
 
 
@@ -87,9 +95,9 @@ const loginUser = async (req, res) => {
 }
 
 
-// @desc login user
-// @route POST /api/users/login
-// @access public
+// @desc logout user
+// @route POST /api/users/logout
+// @access private
 
 const logoutUser = (req, res) => {
     try {
@@ -111,7 +119,8 @@ const logoutUser = (req, res) => {
 // @access private
 
 const updateUser = async (req, res) => {
-    const {name, email, username, password, profilePic, bio} = req.body;
+    const {name, email, username, password, bio} = req.body;
+    let { profilePic } = req.body;
     const userId = req.user._id
     try {
 
@@ -131,6 +140,14 @@ const updateUser = async (req, res) => {
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(password, salt);
             user.password = hashedPassword;
+        }
+
+        if(profilePic){
+            if(user.profilePic){
+                await cloudinary.uploader.destroy(user.profilePic.split("/").pop().split(".")[0])
+            }
+            const uploadedResponse = await cloudinary.uploader.upload(profilePic);
+            profilePic = uploadedResponse.secure_url;
         }
 
         user.name = name || user.name;
