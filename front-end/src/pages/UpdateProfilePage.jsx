@@ -13,8 +13,8 @@ import {
 import { useRef, useState } from 'react'
 import { useRecoilState } from 'recoil';
 import userAtom from '../atoms/userAtom';
-import useImagePreview from '../../hooks/useImagePreview';
-import useShowToast from '../../hooks/useShowToast';
+import useImagePreview from '../hooks/useImagePreview';
+import useShowToast from '../hooks/useShowToast';
 
   
   export default function UpdateProfilePage() {
@@ -32,6 +32,7 @@ import useShowToast from '../../hooks/useShowToast';
 
     // useRef(null) creates a reference to something, (null in this case)
     const fileRef = useRef(null);
+    const [updating, setUpdating] = useState(false);
 
     const { handleImageChange, imageUrl } = useImagePreview()
 
@@ -41,6 +42,9 @@ import useShowToast from '../../hooks/useShowToast';
 
     const handleSubmit = async (e) => {
       e.preventDefault();
+
+      if(updating){return;}
+      else {setUpdating(true);}
 
       try {
         const res = await fetch(`api/users/update/${user._id}`, { 
@@ -52,14 +56,24 @@ import useShowToast from '../../hooks/useShowToast';
         }
         )
         const data = await res.json();
-        console.log(data);
+
+        if (data.error){
+          showToast("Error", data.error, "error");
+          return; 
+        }
+        showToast("Success", "Profile updated successfully", "success");
+        setUser(data);
+        localStorage.setItem("user", JSON.stringify(data));
         
         
       } catch (error) {
 
         showToast("Error", error, "error")
         
+      }finally{
+        setUpdating(false);
       }
+
     }
   
     return (
@@ -167,6 +181,7 @@ import useShowToast from '../../hooks/useShowToast';
             </Button>
             <Button
             type='submit'
+            isLoading={updating}
               bg={'green.400'}
               color={'white'}
               w="full"

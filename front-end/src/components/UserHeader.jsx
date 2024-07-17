@@ -1,39 +1,48 @@
-import { Box, VStack, Flex, Avatar, Text, LinkBox, Link } from "@chakra-ui/react"
+import { Box, VStack, Flex, Avatar, Text, LinkBox, Link, Button } from "@chakra-ui/react"
+import {useRecoilValue} from 'recoil'
+import userAtom from '../atoms/userAtom'
+import {Link as RouterLink} from 'react-router-dom'
 
-const UserHeader = () => {
+const UserHeader = ({user}) => {
+
+    const currentUser = useRecoilValue(userAtom);
     return(
         <VStack gap={4} alignItems={'start'}>
             <Flex justifyContent={"space-between"} w={'full'}>
                 <Box>
                     <Text fontSize={"2xl"} fontWeight={'bold'}>
-                        Rehan Haider
+                        {user.name}
                     </Text>
-                    {/* <Flex gap={2} flexDirection={'column'} alignItems={'start'}>
-                        <Text fontSize={'l'}>Junior</Text>
-                        <Text fontSize={'l'}>SEECS</Text>
-                    </Flex> */}
+                    <Flex gap={2} flexDirection={'column'} alignItems={'start'}>
+                        <Text fontSize={'l'}>{user.username}</Text>
+                    </Flex>
                     
                 </Box>
                 <Box>
+                    {user.profilePic && (
                     <Avatar
-                        name="REHAN HAIDER"
-                        src="/RehanHaider.JPG"
+                        name={user.name}
+                        src={user.profilePic}
                         size={'2xl'}
-                    />
+                    />)}
+                    {!user.profilePic && (
+                    <Avatar
+                        name={user.name}
+                        src= "htt[s://bit.ly/broken-link"
+                        size={'2xl'}
+                    />)}
                 </Box>
             </Flex>
 
-            <Text>SEECS<br></br>SOPHOMORE</Text>
+            <Text>{user.bio}</Text>
 
-            {/* <Flex w={'full'} justifyContent={'space-between'}>
-                <Flex gap={2} alignItems={'center'}>
+            {currentUser._id === user._id && (
+                <Link as={RouterLink} to='/update'>
+                    <Button size={'sm'}>Update Profile</Button>
+                </Link>
+            )}
 
-                    <Box w='1' h='1' borderRadius={'full'}></Box>
-                    <Link>your links</Link>
-                    <Link>your links</Link>
-
-                </Flex>
-            </Flex> */}
+            {}
 
             <Flex w={'full'} fontWeight={'bold'} justifyContent={'center'} borderRadius={'full'} bg = {'theme.neutral'} color={'#ffffff'}>
                 POSTS
